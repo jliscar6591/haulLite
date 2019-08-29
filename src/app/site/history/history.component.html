@@ -1,0 +1,86 @@
+<mat-tab-group class="tab-group">
+    <mat-tab label="Open Bids">
+        <mat-form-field class="example-form-field" class="search">
+            <input matInput type="text" placeholder="Search bids">
+            <button mat-button matSuffix mat-icon-button aria-label="search">
+                <mat-icon>search</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-list>
+            <mat-list-item *ngFor="let bid of bidsList, let i = index">
+                <mat-card class="card">
+                    <div class="flex-column">
+                        <div class="flex-name">
+                            <div>
+                                <b>{{bid.name}}</b>
+                            </div>
+                        </div>
+                        <div>
+                            <b>Note:</b>
+                        </div>
+                        <div class="notes">
+                            {{bid.bidNotes}}
+                        </div>
+                        <div class="flex-end">
+                            <div>
+                                <b>Bid:</b>
+                            </div>
+                            <div>
+                                <b>Status:</b>
+                            </div>
+                        </div>
+                        <div class="flex-end">
+                            <div class="price">
+                                {{bid.bidPrice | currency}}
+                            </div>
+                            <div class="pending">
+                                pending
+                            </div>
+                        </div>
+                        <div>
+                            <b>Job dates:</b>
+                        </div>
+                        <div class="flex-dates">
+                            <div>
+                                {{bid.expectedStartDate}} -
+                            </div>
+                            <div>
+                                {{bid.expectedEndDate}}
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </mat-list-item>
+        </mat-list>
+    </mat-tab>
+    <mat-tab label="Open Jobs">
+        <mat-form-field class="example-form-field" class="search">
+            <input matInput type="text" placeholder="Search jobs">
+            <button mat-button matSuffix mat-icon-button aria-label="search">
+                <mat-icon>search</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-expansion-panel *ngFor="let job of jobsList, let i = index">
+            <mat-expansion-panel-header class="flex">
+                <mat-panel-title>
+                    {{job.name}}
+                </mat-panel-title>
+                <mat-panel-description class="distance">
+                    <div>{{job.currentDistance}}</div>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="description">{{job.description}}</div>
+            <div class="weight">Approx. load: {{job.weight}}lbs</div>
+            <div class="flex-end">
+                <div class="flex">
+                    <div>
+                        <b>{{job.pay | currency}}</b>
+                    </div>
+                </div>
+                <div>
+                    <button mat-raised-button color="accent" (click)="edit(i)">Edit</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-tab>
+</mat-tab-group>
