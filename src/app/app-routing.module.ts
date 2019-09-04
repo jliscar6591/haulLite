@@ -10,7 +10,7 @@ import { SiteComponent }from './site/site.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'site',
     component: SiteComponent,
     children:[
       {
@@ -32,7 +32,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'welcome',
+    path: '/',
     component: LoginComponent
   },
   {
