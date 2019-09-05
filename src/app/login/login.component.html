@@ -2,13 +2,13 @@
     <img src="assets/haul-lite.png" class="logo">
 </div>
 <div class="login-form">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+    <div [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
         <mat-form-field class="input">
-            <input matInput type="email" placeholder="username" value="billy@gmail.com" formControlName="username">
+            <input matInput type="email" placeholder="username" value="" formControlName="username">
         </mat-form-field>
         <mat-form-field class="input">
-            <input matInput type="password" placeholder="password" value="happy1" formControlName="password">
+            <input matInput type="password" placeholder="password" value="" formControlName="password">
         </mat-form-field>
         <button mat-raised-button (click)="onSubmit()" color="accent" class="login-btn">Login</button>
-    </form>
+    </div>
 </div>
