@@ -20,15 +20,16 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: this.formBuilder.control('', [Validators.required, Validators.email]),
-      password: this.formBuilder.control('', Validators.required)
+      username: this.formBuilder.control('billy@gmail.com', [Validators.required]),
+      password: this.formBuilder.control('happy1', Validators.required)
     })
     return this.loginForm;
   }
 
   public onSubmit() {
-    if(this.loginForm.controls.username.value === 'billy@gmail.com' && this.loginForm.controls.password.value === 'happy1'){
-      this.router.navigateByUrl('jobs');
+    console.log(this.loginForm.controls.username.value, this.loginForm.controls.password.value);
+    if (this.loginForm.controls.username.value === 'billy@gmail.com' && this.loginForm.controls.password.value === 'happy1') {
+      this.router.navigateByUrl('site');
     }
   }
 

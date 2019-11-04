@@ -5,39 +5,17 @@ import { JobsComponent } from './site/jobs/jobs.component';
 import { HistoryComponent } from './site/history/history.component';
 import { AccountComponent } from './site/account/account.component';
 import { CreateComponent } from './site/create/create.component';
-import { SiteComponent }from './site/site.component';
+import { SiteComponent } from './site/site.component';
 
 
 const routes: Routes = [
   {
-    path: 'site',
-    component: SiteComponent,
-    children:[
-      {
-        path: 'jobs',
-        component: JobsComponent
-      },
-      {
-        path: 'history',
-        component: HistoryComponent
-      },
-      {
-        path: 'account',
-        component: AccountComponent
-      },
-      {
-        path: 'create',
-        component: CreateComponent
-      }
-    ]
-  },
-  {
-    path: '/',
-    component: LoginComponent
-  },
-  {
-    path: '**',
-    component: LoginComponent
+    path: '',
+    component: LoginComponent,
+    children: [{
+      path: 'site',
+      component: SiteComponent
+    },]
   }
 ];
 

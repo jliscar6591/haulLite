@@ -18,8 +18,7 @@ const appRoutes: Routes = [
             { path: 'history', component: HistoryComponent },
             { path: 'login', component: LoginComponent },
         ]
-    },
-    { path: '', component: LoginComponent }
+    }
 ]
 
 @NgModule({
