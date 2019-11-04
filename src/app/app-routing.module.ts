@@ -12,12 +12,11 @@ const routes: Routes = [
   {
     path: '',
     component: LoginComponent,
-    children: [{
-      path: 'site',
-      component: SiteComponent
-    },]
-  }
-];
+  },
+  {
+    path: 'site',
+    component: SiteComponent,
+  },];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

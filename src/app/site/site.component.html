@@ -11,22 +11,22 @@
 <router-outlet></router-outlet>
 <!-- FOOTER ALWAYS VISIBILE WHILE IN SITE, ACTS AS NAV-->
 <div class="footer">
-    <div routerLink="/jobs" routerLinkActive="active">
+    <div routerLink="/jobs" routerLinkActive="active" (click)=navigateToJobs()>
         <mat-icon>local_shipping</mat-icon>
     </div>
-    <div routerLink="/history" routerLinkActive="active">
+    <div routerLink="/history" routerLinkActive="active" (click)=navigateToHistory()>
         <mat-icon>query_builder</mat-icon>
     </div>
-    <div routerLink="/create" routerLinkActive="active">
+    <div routerLink="/create" routerLinkActive="active" (click)=navigateToCreate()>
         <mat-icon>add</mat-icon>
     </div>
-    <div routerLink="/account" routerLinkActive="active">
+    <div routerLink="/account" routerLinkActive="active" (click)=navigateToAccount()>
         <mat-icon>account_circle</mat-icon>
     </div>
     <div [matMenuTriggerFor]="logoutMenu">
         <mat-icon>power_settings_new</mat-icon>
         <mat-menu #logoutMenu="matMenu">
-            <button routerLink="/welcome" routerLinkActive="active" mat-menu-item>Logout</button>
+            <button routerLink="/login" routerLinkActive="active" mat-menu-item (click)=navigateToLogin()>Logout</button>
         </mat-menu>
     </div>
 

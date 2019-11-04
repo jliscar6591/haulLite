@@ -10,7 +10,8 @@ import { SiteComponent } from './site.component';
 
 const appRoutes: Routes = [
     {
-        path: 'site', component: SiteComponent,
+        path: '',
+        component: SiteComponent,
         children: [
             { path: 'jobs', component: JobsComponent },
             { path: 'account', component: AccountComponent },

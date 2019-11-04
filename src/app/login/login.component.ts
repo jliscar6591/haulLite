@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   public onSubmit() {
     console.log(this.loginForm.controls.username.value, this.loginForm.controls.password.value);
     if (this.loginForm.controls.username.value === 'billy@gmail.com' && this.loginForm.controls.password.value === 'happy1') {
-      this.router.navigateByUrl('site');
+      this.router.navigate(['/site']);
     }
   }
 
